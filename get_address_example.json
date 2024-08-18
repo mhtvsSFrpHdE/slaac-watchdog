@@ -1,0 +1,31 @@
+{
+    "Ethernet1": {
+        "global": [],
+        "private": []
+    },
+    "Ethernet2": {
+        "global": [
+            {
+                "address": "0:0:0:0:0:0:0:b751",
+                "deprecated": false,
+                "temporary": false
+            },
+            {
+                "address": "0:0:0:0:0:0:0:5904",
+                "deprecated": false,
+                "temporary": false
+            },
+            {
+                "address": "0:0:0:0:0:0:0:b460",
+                "deprecated": false,
+                "temporary": true
+            },
+            {
+                "address": "0:0:0:0:0:0:0:3f8e",
+                "deprecated": false,
+                "temporary": true
+            }
+        ],
+        "private": []
+    }
+}
