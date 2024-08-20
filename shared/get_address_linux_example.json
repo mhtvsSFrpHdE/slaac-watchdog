@@ -1,0 +1,111 @@
+[
+    {
+        "ifindex": 1,
+        "ifname": "lo",
+        "flags": [
+            "LOOPBACK",
+            "UP",
+            "LOWER_UP"
+        ],
+        "mtu": 0,
+        "operstate": "UNKNOWN",
+        "txqlen": 0,
+        "addr_info": [
+            {
+                "family": "inet6",
+                "local": "::1",
+                "prefixlen": 128,
+                "scope": "host",
+                "noprefixroute": true,
+                "valid_life_time": 0,
+                "preferred_life_time": 0
+            }
+        ]
+    },
+    {
+        "ifindex": 2,
+        "ifname": "Ethernet1",
+        "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+        ],
+        "mtu": 0,
+        "operstate": "UP",
+        "txqlen": 0,
+        "addr_info": [
+            {
+                "family": "inet6",
+                "local": "0:0:0:0:0:0:0:c244",
+                "prefixlen": 0,
+                "scope": "global",
+                "temporary": true,
+                "dynamic": true,
+                "valid_life_time": 0,
+                "preferred_life_time": 0
+            },
+            {
+                "family": "inet6",
+                "local": "0:0:0:0:0:0:0:b09",
+                "prefixlen": 64,
+                "scope": "global",
+                "dynamic": true,
+                "mngtmpaddr": true,
+                "valid_life_time": 0,
+                "preferred_life_time": 0
+            },
+            {
+                "family": "inet6",
+                "local": "0:0:0:0:0:0:0:f4ee",
+                "prefixlen": 0,
+                "scope": "global",
+                "temporary": true,
+                "dynamic": true,
+                "valid_life_time": 0,
+                "preferred_life_time": 0
+            },
+            {
+                "family": "inet6",
+                "local": "0:0:0:0:0:0:0:b09",
+                "prefixlen": 0,
+                "scope": "global",
+                "dynamic": true,
+                "mngtmpaddr": true,
+                "valid_life_time": 0,
+                "preferred_life_time": 0
+            }
+        ]
+    },
+    {
+        "ifindex": 3,
+        "ifname": "Ethernet2",
+        "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+        ],
+        "mtu": 0,
+        "operstate": "UP",
+        "txqlen": 0,
+        "addr_info": [
+            {
+                "family": "inet6",
+                "local": "fd00::6540",
+                "prefixlen": 0,
+                "scope": "global",
+                "valid_life_time": 0,
+                "preferred_life_time": 0
+            },
+            {
+                "family": "inet6",
+                "local": "fe80::b0a",
+                "prefixlen": 0,
+                "scope": "link",
+                "valid_life_time": 0,
+                "preferred_life_time": 0
+            }
+        ]
+    }
+]
