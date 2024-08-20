@@ -1,0 +1,11 @@
+[Unit]
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/home/<user name>/<install folder>/linux/daemon.sh
+WorkingDirectory=/home/<user name>/<install folder>/linux
+User=<user name>
+
+[Install]
+WantedBy=multi-user.target
