@@ -160,3 +160,4 @@ cython_debug/
 #.idea/
 /.vscode
 known_address.json
+windows/SLAAC watchdog.xml
