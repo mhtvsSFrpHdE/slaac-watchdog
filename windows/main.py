@@ -54,6 +54,16 @@ if len(newAddress) == 0:
     print("No new address found.")
     exit()
 
+# Save discovered addresses as known addresses
+with open(knownAddressFileName, 'w', encoding='utf-8') as jsonFile:
+    json.dump(newAddress, jsonFile, ensure_ascii=False, indent=4)
+# Known address file created, do not delete any address on first run
+# There is no an address to considered as valid address in this phase
+# If the very first address is an invalid address
+# Delete address based on newAddress[0] cause internet offline
+if fileExist == False:
+    exit()
+
 
 def removeAddress(address: str):
     # powershell -ExecutionPolicy Bypass -Command "Remove-NetIPAddress -IPAddress {address} -Confirm:$false"
@@ -81,7 +91,3 @@ for item in getAddress[argumentAdapterName]["global"]:
     if shouldRemove:
         removeAddress(address)
         continue
-
-# Old address should all removed, record new addresses as known addresses
-with open(knownAddressFileName, 'w', encoding='utf-8') as jsonFile:
-    json.dump(newAddress, jsonFile, ensure_ascii=False, indent=4)
