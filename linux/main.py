@@ -22,6 +22,10 @@ print("Received prefix event: {prefixEvent}, on interface: {adapterName}".format
 
 # Get subnet
 subnetString = argumentPrefixEvent.split("/", 1)[0]
+subnet = ipaddress.ip_address(subnetString)
+if subnet.is_private:
+    print("Private subnet, ignore")
+    exit()
 
 # Get address
 getAddress = get_address.getIpAddress6()
