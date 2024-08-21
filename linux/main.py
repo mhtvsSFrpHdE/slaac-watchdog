@@ -18,7 +18,8 @@ args = argParser.parse_args()
 # Use parameter
 argumentPrefixEvent = args.prefixEvent
 argumentAdapterName = args.adapterName
-print("Received prefix event: {prefixEvent}, on interface: {adapterName}".format(prefixEvent=argumentPrefixEvent, adapterName=argumentAdapterName))
+print("Received prefix event: {prefixEvent}, on interface: {adapterName}".format(
+    prefixEvent=argumentPrefixEvent, adapterName=argumentAdapterName))
 
 # Get subnet
 subnetString = argumentPrefixEvent.split("/", 1)[0]
@@ -36,11 +37,13 @@ for interface in getAddress:
         break
 
 
-def removeAddress(address: str):
+def removeAddress(address: str, prefixLength: int):
     # ip address delete {local}/{prefixlen} dev {ifname}
-    commandResult = subprocess.run(['ip', 'address', 'delete', address, "dev",
+    deleteAddress = "{address}/{prefixLength}".format(
+        address=address, prefixLength=prefixLength)
+    commandResult = subprocess.run(['ip', 'address', 'delete', deleteAddress, "dev",
                                    argumentAdapterName], stdout=subprocess.PIPE, universal_newlines=True)
-    print("Removing: {address}".format(address=address))
+    print("Removing: {address}")
     needAdminPermission = 2
     if (commandResult.returncode == needAdminPermission):
         print("ip address delete error, check root permission")
@@ -60,6 +63,5 @@ for addrInfo in allAddrInfo:
     shouldRemove = same_subnet.sameSubnet(
         subnetString, addressString, prefixLength) == False
     if shouldRemove:
-        removeAddress(
-            "{address}/{prefixLength}".format(address=addressString, prefixLength=prefixLength))
+        removeAddress(addressString, prefixLength)
         continue

@@ -5,7 +5,7 @@ import ipaddress    # nopep8
 
 def sameSubnet(address1String: str, address2String: str, prefixLength: int):
     maskString = ipaddress.ip_network(
-        "::0/"+str(prefixLength)).hostmask.exploded
+        "::0/{prefixLength}".format(prefixLength=prefixLength)).hostmask.exploded
     networkTemplate = '0000:0000:0000:0000:0000:0000:0000:0000'
     subnetArray = list(networkTemplate)
     explodedAddress1String = ipaddress.ip_address(address1String).exploded
@@ -14,8 +14,8 @@ def sameSubnet(address1String: str, address2String: str, prefixLength: int):
             subnetArray[index] = (explodedAddress1String[index])
         else:
             break
-    subnetString = "".join(subnetArray) + \
-        "/{prefixLength}".format(prefixLength=prefixLength)
+    subnetString = "{address}/{prefixLength}".format(
+        address="".join(subnetArray), prefixLength=prefixLength)
     subnet = ipaddress.ip_network(subnetString)
 
     address2 = ipaddress.ip_network(address2String)
