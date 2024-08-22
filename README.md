@@ -1,4 +1,5 @@
 # slaac-watchdog
+![IPv6_one_does_not_simply](https://github.com/user-attachments/assets/8948e7a6-1c3a-4c29-aa8f-4bb0573b844c)
 ## How to use
 ### Windows
 1. Install Python for example `3.10.11`, it's not necessary to add to PATH
