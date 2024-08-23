@@ -10,7 +10,7 @@
 # local <::1> table local proto kernel metric 0 pref medium
 ip monitor route dev eth0 | while read event; do
     if [[ $event == *'/'* ]] && [[ $event == *'proto kernel'* ]]; then
-        python3 main.py -p "$event" -a eth0
+        python3 main.py -p "$event" -a <interface name>
         echo 'Done main.py'
     fi
 done
