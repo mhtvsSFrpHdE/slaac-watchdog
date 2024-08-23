@@ -4,9 +4,12 @@
 ### Windows
 1. Install Python for example `3.10.11`, it's not necessary to add to PATH
 1. Run `windows\install.bat`, follow instructions on screen
+1. If multipla adapter is required, run `install.bat` again
 ### Linux
 1. Install Python 3, and `python3` available as a command
 1. `cd slaac-watchdog/linux`
+1. Use text editor open `daemon.sh`
+1. Edit `<interface name>` to your interface name
 1. Use text editor open `slaac-watchdog.service`
 1. Edit `ExecStart=` to full path of `slaac-watchdog/linux/daemon.sh`
 1. Edit `WorkingDirectory` to full path of directory where `daemon.sh` is stored
@@ -15,6 +18,7 @@
 1. `sudo systemctl enable slaac-watchdog.service`
 1. `sudo systemctl start slaac-watchdog.service`
 1. `sudo systemctl status slaac-watchdog.service`
+1. If multiple interface is required, duplicate `daemon.sh` and `slaac-watchdog.service`
 ## What is this
 Each time a device connected to a SLAAC IPv6 network, it will request a subnet prefix from router,  
 then generate its own address with in this subnet range.  
