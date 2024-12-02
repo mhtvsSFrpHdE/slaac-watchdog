@@ -43,7 +43,7 @@ def removeAddress(address: str, prefixLength: int):
         address=address, prefixLength=prefixLength)
     commandResult = subprocess.run(['ip', 'address', 'delete', deleteAddress, "dev",
                                    argumentAdapterName], stdout=subprocess.PIPE, universal_newlines=True)
-    print("Removing: {address}")
+    print("Removing: {address}".format(address=address))
     needAdminPermission = 2
     if (commandResult.returncode == needAdminPermission):
         print("ip address delete error, check root permission")
