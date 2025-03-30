@@ -4,7 +4,7 @@
 ### Windows
 1. Install Python for example `3.10.11`, it's not necessary to add to PATH
 1. Run `windows\install.bat`, follow instructions on screen
-1. If multipla adapter is required, run `install.bat` again
+1. If multiple adapter is required, run `install.bat` again
 ### Linux
 1. Install Python 3, and `python3` available as a command
 1. `cd slaac-watchdog/linux`
