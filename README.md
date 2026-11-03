@@ -27,6 +27,8 @@ and this subnet prefix is different from previous one, things becomes struggle.
 Mainstream operating systems (Windows, Linux) will not consider previous subnet prefix as obsolete,  
 the result is you have multiple IPv6 address in different subnet prefix.
 
+Search for "Flash renumbering" to know more.
+
 This situation often happens on manually reconnecting to ISP, like reboot your router.  
 Certain ISP don't consider your obsolete IPv6 address is valid,  
 you can't use them to browse internet, or receive incoming connections.  
